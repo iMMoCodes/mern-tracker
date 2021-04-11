@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 const CreateUser = () => {
-	const [username, setUsername] = useState('')
+	const [users, setUsers] = useState({
+		username: '',
+	})
 
 	const changeUsername = (e) => {
-		setUsername(e.target.value)
+		setUsers({ username: e.target.value })
 	}
 
 	const onSubmit = (e) => {
 		e.preventDefault()
-		console.log(username)
-		setUsername('')
+		console.log(users)
+
+		axios.post('http://localhost:5000/users/add', users).then((res) => console.log(res.data))
+		setUsers({ username: '' })
 	}
 
 	return (
@@ -19,7 +24,7 @@ const CreateUser = () => {
 			<form onSubmit={onSubmit}>
 				<div className='form-group'>
 					<label>Username: </label>
-					<input type='text' required value={username} onChange={changeUsername} />
+					<input type='text' required value={users.username} onChange={changeUsername} />
 				</div>
 				<div className='form-group'>
 					<input type='submit' value='Create User' className='btn btn-primary' />
