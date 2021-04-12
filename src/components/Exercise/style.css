@@ -1,0 +1,16 @@
+.edit-button {
+	color: black;
+}
+
+.edit-button:hover {
+	text-decoration: none;
+	color: green;
+}
+
+.delete-button {
+	border: none;
+}
+
+.delete-button:hover {
+	color: red;
+}
