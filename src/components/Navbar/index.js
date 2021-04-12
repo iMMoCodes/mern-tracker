@@ -7,7 +7,7 @@ const Navbar = () => {
 			<Link to='/' className='navbar-brand'>
 				ExcerciseTracker
 			</Link>
-			<div className='collapse navbar-collapse'>
+			<div className='navbar-collapse'>
 				<ul className='navbar-nav mr-auto'>
 					<li className='navbar-item'>
 						<Link to='/' className='nav-link'>
